@@ -1,0 +1,51 @@
+const kost = [
+  {
+    _id: "1",
+    name: "Juragan Boardinghouse",
+    photo: "https://static.mamikos.com/uploads/cache/data/style/2019-03-24/jrcA68Yc-540x720.jpg",
+    location: "Malang",
+    price: "RP. 500.000 / Bulan",
+    address: "9 Fair Oaks Point RT 01 / RW 12",
+  },
+  {
+    _id: "2",
+    name: "Avengers Sukun",
+    photo: "https://static.mamikos.com/uploads/cache/data/style/2021-03-21/sntqg291-540x720.jpg",
+    location: "Malang",
+    price: "RP. 550.000 / Bulan",
+    address: "32 Park Meadow Point RT 35 / RW 21",
+  },
+  {
+    _id: "3",
+    name: "Daniel's House",
+    photo: "https://static.mamikos.com/uploads/cache/data/style/2020-02-07/Qr9IrzZ4-540x720.jpg",
+    location: "Surabaya",
+    price: "RP. 600.000 / Bulan",
+    address: "8 Ridgeview Place RT 24 / RW 98",
+  },
+  {
+    _id: "4",
+    name: "Jero Sading",
+    photo: "https://static.mamikos.com/uploads/cache/data/style/2019-11-27/6CqlIdr0-540x720.jpg",
+    location: "Malang",
+    price: "RP. 650.000 / Bulan",
+    address: "75 Schlimgen Parkway RT 34 / RW 91",
+  },
+  {
+    _id: "5",
+    name: "Sunan Muria",
+    photo: "https://static.mamikos.com/uploads/cache/data/style/2021-04-23/hCzorJ8S-540x720.jpg",
+    location: "Malang",
+    price: "RP. 700.000 / Bulan",
+    address: "81 Green Drive RT 12 / RW 91",
+  },
+  {
+    _id: "6",
+    name: "Singgahsini Green House",
+    photo: "https://static.mamikos.com/uploads/cache/data/style/2021-04-23/7pDB6XNI-540x720.jpg",
+    location: "Malang",
+    price: "RP. 750.000 / Bulan",
+    address: "8 Gale Way RT 90 / RW 12",
+  },
+]
+export default kost;

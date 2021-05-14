@@ -1,0 +1,30 @@
+body {
+  background-color: whitesmoke;
+  /* font-family: "AdobeClean"; */
+}
+
+/* .ui.header {
+  font-family: "AdobeClean";
+} */
+/* h1 {
+  font-family: "AdobeClean";
+} */
+
+@font-face {
+  font-family: "AdobeCleanSerif";
+  src: url("../../public/fonts/AdobeClean/AdobeCleanSerifRegular.woff");
+  font-style: serif;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AdobeClean";
+  src: url("../../public/fonts/AdobeClean/AdobeCleanUXRegular.woff");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+/* h1 {
+  font-family: "AdobeCleanSerif";
+} */
