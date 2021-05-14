@@ -31,6 +31,8 @@ const { MediaContextProvider, Media } = createMedia({
   },
 })
 const dataSeru = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+import image_default from '../../public/image_default.png'
+import image_not_found from '../../public/image_not_found.png'
 
 
 const HomepageHeading = ({ mobile }) => (
@@ -173,29 +175,29 @@ class DesktopContainer extends Component {
                 <Menu.Item as='a'>Lokasi</Menu.Item>
                 <Menu.Item as='a'>Bantuan</Menu.Item> */}
                 {/* <Menu.Item as='a'>Dana</Menu.Item> */}
-                <Menu.Item as='h1'  style={{ padding: '0px 10px', margin: 0, fontWeight: 'bolder' }}>
+                <Menu.Item as='h1' style={{ padding: '0px 10px', margin: 0, fontWeight: 'bolder' }}>
                   {/* <img src="./logo.png" alt="logo" style={{ height: 30, width: "auto" }} />
                   BROSIS' */}
-                <div style={{display:'flex'}}>
-                  <h1 style={{ padding: '0px 0px', margin: 0, fontWeight: 'bolder' }}>BROSIS</h1>
-                  <h1 style={{ padding: '0px 0px', color: 'blue', margin: 0, fontWeight: 'bolder' }}>'</h1>
-                </div>
+                  <div style={{ display: 'flex' }}>
+                    <h1 style={{ padding: '0px 0px', margin: 0, fontWeight: 'bolder' }}>BROSIS</h1>
+                    <h1 style={{ padding: '0px 0px', color: 'blue', margin: 0, fontWeight: 'bolder' }}>'</h1>
+                  </div>
                 </Menu.Item>
-              <Menu.Item position='right'>
-                <Button as='a' inverted={!fixed}>
-                  Masuk
+                <Menu.Item position='right'>
+                  <Button as='a' inverted={!fixed}>
+                    Masuk
                   </Button>
-                <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
-                  Daftar
+                  <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
+                    Daftar
                   </Button>
-              </Menu.Item>
+                </Menu.Item>
               </Container>
             </Menu>
-          <HomepageHeading style={{ width: 100 }} />
+            <HomepageHeading style={{ width: 100 }} />
           </Segment>
         </Visibility>
 
-        { children }
+        { children}
       </Media >
     )
   }
@@ -491,7 +493,7 @@ const Index = () => (
                   <div >
                     <img
                       alt="photo"
-                      src={"./image_default.png"}
+                      src={image_default}
                       style={{
                         objectFit: "cover",
                         width: "100%",
@@ -532,7 +534,7 @@ const Index = () => (
                   <div >
                     <img
                       alt="photo"
-                      src={"./image_not_found.png"}
+                      src={image_not_found}
                       style={{
                         objectFit: "cover",
                         width: "100%",
