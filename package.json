@@ -4,7 +4,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p $PORT",
-    "heroku-postbuild": "yarn run build"
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "@artsy/fresnel": "^1.4.0",
