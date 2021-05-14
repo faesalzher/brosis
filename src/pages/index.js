@@ -31,8 +31,8 @@ const { MediaContextProvider, Media } = createMedia({
   },
 })
 const dataSeru = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-import image_default from '../../public/image_default.png'
-import image_not_found from '../../public/image_not_found.png'
+// import image_default from '../../public/image_default.png'
+// import image_not_found from '../../public/image_not_found.png'
 
 
 const HomepageHeading = ({ mobile }) => (
@@ -493,7 +493,7 @@ const Index = () => (
                   <div >
                     <img
                       alt="photo"
-                      src={image_default}
+                      src={'https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/'}
                       style={{
                         objectFit: "cover",
                         width: "100%",
@@ -534,7 +534,7 @@ const Index = () => (
                   <div >
                     <img
                       alt="photo"
-                      src={image_not_found}
+                      src={'https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/'}
                       style={{
                         objectFit: "cover",
                         width: "100%",
