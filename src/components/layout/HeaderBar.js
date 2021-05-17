@@ -1,16 +1,10 @@
 import React, { useState } from 'react'
-import Link from 'next/link'
-import Router, { withRouter } from "next/router";
+import Router from "next/router";
 import {
   Button,
   Container,
-  Divider,
   Grid,
-  Header,
   Icon,
-  Card,
-  age,
-  List,
   Menu,
   Segment,
   Sidebar,
