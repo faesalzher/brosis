@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form, Grid, Header } from "semantic-ui-react";
 
-export default function TellUsForm() {
+export default function TellUsForm(props) {
     const formDefault = {
         nama_lengkap: "",
         momor_ponsel: "",
@@ -20,11 +20,11 @@ export default function TellUsForm() {
         <>
             <Grid.Column width={8} style={{ padding: '2em' }}>
                 <Header as='h2' style={{ color: 'blue', fontSize: '3em', fontWeight: 'bolder' }}>
-                    Belum menemukan brosis di kampusmu?
-              </Header>
+                    {props.title}
+                </Header>
                 <p style={{ fontSize: '1.33em' }}>
-                    Jangan khawatir, ceritakan pada kami.
-              </p>
+                    {props.subtitle}
+                </p>
             </Grid.Column>
             <Grid.Column width={8} style={{ padding: '2em' }}>
                 <Form>
@@ -40,7 +40,7 @@ export default function TellUsForm() {
                     <Form.Field>
                         <label>Nomor Ponsel</label>
                         <input
-                            placeholder="+62..."
+                            placeholder="Nomor Ponsel"
                             id="nomor_ponsel"
                             onChange={handleChange}
                             style={{ borderRadius: 15 }}

@@ -16,6 +16,7 @@ import {
   Sidebar,
   Visibility,
 } from 'semantic-ui-react'
+import MainMenu from '../MainMenu';
 const { MediaContextProvider, Media } = createMedia({
   breakpoints: {
     mobile: 0,
@@ -25,8 +26,6 @@ const { MediaContextProvider, Media } = createMedia({
 });
 import PropTypes from 'prop-types'
 import { createMedia } from '@artsy/fresnel'
-import menu from "../../stores/home";
-import login from "../../pages/login";
 import { useRouter } from 'next/router';
 
 const HomepageHeading = ({ mobile }) => (
@@ -55,66 +54,18 @@ const HomepageHeading = ({ mobile }) => (
             fontWeight: "bolder",
             color: "white",
             fontSize: 65,
+            fontSize: mobile ? '2em' : '5em',
+            //       fontWeight: 'bolder',
+            color: "white",
+            //       marginBottom: 0,
+            marginTop: mobile ? '1.5em' : '3em',
           }}
         >
           There is nothing like Brosis life.
       </h1>
       </Grid.Column>
       <Grid.Column width={8}>
-        <Card
-          style={{
-            width: "100%", boxShadow: "none",
-            backgroundColor: "rgba(0,0,0,0.25)",
-            borderRadius: 20,
-          }}
-        >
-          <Card.Content>
-            <h1
-              style={{
-                color: "white",
-                textAlign: "center",
-              }}
-            >
-              Menu
-                      </h1>
-            <Grid>
-              {menu.map((item, index) => {
-                return (
-                  <Grid.Column width={8} key={index}>
-                    <Card
-                      style={{
-                        borderRadius: 20,
-                        boxShadow: "none",
-                        backgroundColor: item.color,
-                      }}
-                      onClick={() => Router.push(item.link)}
-                    >
-                      <Card.Content>
-                        <img
-                          alt="menu"
-                          src={item.background}
-                          style={{
-                            height: 60, width: 60,
-                            objectFit: "fill", borderRadius: "50%",
-                            position: "absolute",
-                          }}
-                        />
-                        <h1
-                          style={{
-                            marginTop: 10, marginLeft: 70, marginBottom: 13,
-                            color: "black",
-                          }}
-                        >
-                          {item.name}
-                        </h1>
-                      </Card.Content>
-                    </Card>
-                  </Grid.Column>
-                )
-              })}
-            </Grid>
-          </Card.Content>
-        </Card>
+      <MainMenu />
       </Grid.Column>
     </Grid>
   </Container >
@@ -127,7 +78,6 @@ HomepageHeading.propTypes = {
 
 function DesktopContainer(props) {
   const router = useRouter();
-
   const [fixed, setFixed] = useState(false)
   const hideFixedMenu = () => {
     setFixed(false)
@@ -135,11 +85,13 @@ function DesktopContainer(props) {
   const showFixedMenu = () => {
     setFixed(true)
   }
-  const isNotHome = (router.pathname !== "/")
   const { children } = props
   // const { fixed } = state
-  const isCoLivingActive = router.pathname === "/co-living"
+  const isNotHome = (router.pathname !== "/");
+  const isCoLivingActive = router.pathname === "/co-living";
   const isLocationActive = isCoLivingActive || router.pathname === "/kost/[_id]";
+  const isHelpActive = router.pathname === "/help";
+
   return (
     <Media greaterThan='mobile'>
       <Visibility
@@ -150,15 +102,12 @@ function DesktopContainer(props) {
         <Segment
           inverted={isNotHome ? false : !fixed}
           textAlign='left'
-          style={
-            isNotHome ?
-              {}
-              :
-              {
-                minHeight: 700, padding: '1em 0em',
-                backgroundImage: `url(${"./background.jpg"})`,
-                backgroundSize: 'cover',
-              }}
+          style={isNotHome ? {} :
+            {
+              minHeight: 700, padding: '1em 0em',
+              backgroundImage: `url(${"./background.jpg"})`,
+              backgroundSize: 'cover',
+            }}
           vertical
         >
           <Menu
@@ -169,42 +118,38 @@ function DesktopContainer(props) {
             size='large'
           >
             <Container>
-              {/* <Menu.Item as='a' active>
-                  Keseharian
-                </Menu.Item>
-                <Menu.Item as='a'>Lokasi</Menu.Item>
-                <Menu.Item as='a'>Bantuan</Menu.Item> */}
-              {/* <Menu.Item as='a'>Dana</Menu.Item> */}
-              <Menu.Item as='h1' style={{ padding: '0px 10px', margin: 0, fontWeight: 'bolder' }}>
-                {/* <img src="./logo.png" alt="logo" style={{ height: 30, width: "auto" }} />
-                  BROSIS' */}
+              <Menu.Item as='a' style={{ padding: '0px 10px', margin: 0, fontWeight: 'bolder' }} onClick={() => Router.push('/')}>
                 <div style={{ display: 'flex' }}>
                   <h1 style={{ padding: '0px 0px', margin: 0, fontWeight: 'bolder' }}>BROSIS</h1>
                   <h1 style={{ padding: '0px 0px', color: 'blue', margin: 0, fontWeight: 'bolder' }}>'</h1>
                 </div>
               </Menu.Item>
               {
-                isCoLivingActive || isLocationActive ?
+                isCoLivingActive || isLocationActive || isHelpActive ?
                   <>
                     <Menu.Item as='a'><h4>Keseharian</h4></Menu.Item>
-                    <Menu.Item as='a' active={isLocationActive}>
+                    <Menu.Item
+                      as='a'
+                      active={isLocationActive}
+                      onClick={() => Router.push('/co-living')}
+                    >
                       <h4 style={isLocationActive ? { color: 'blue' } : {}}>Lokasi</h4>
                     </Menu.Item>
-                    <Menu.Item as='a'><h4>Bantuan</h4></Menu.Item></> : <></>
+                    <Menu.Item
+                      as='a'
+                      active={isHelpActive}
+                      onClick={() => Router.push('/help')}
+                    >
+                      <h4 style={isHelpActive ? { color: 'blue' } : {}}>Bantuan</h4>
+                    </Menu.Item></> : <></>
               }
-              <Menu.Item position='right'>
-                <Button as='a' onClick={() => Router.push(
-                  '/login'
-                  // {
-                  //   pathname: '/post/[pid]',
-                  //   query: { pid: post.id },
-                  // }
-                )} inverted={isNotHome ? false : !fixed}>
+              <Menu.Item position='right' >
+                <Button as='a' onClick={() => Router.push('/login')} inverted={isNotHome ? false : !fixed}>
                   Masuk
-                  </Button>
+      </Button>
                 <Button as='a' inverted={isNotHome ? false : !fixed} primary style={{ marginLeft: '0.5em' }}>
                   Daftar
-                  </Button>
+      </Button>
               </Menu.Item>
             </Container>
           </Menu>
@@ -222,7 +167,6 @@ function DesktopContainer(props) {
 
 function MobileContainer(props) {
   const router = useRouter();
-  const isNotHome = (router.pathname !== "/")
   const [sidebarOpened, setSidebarOpened] = useState(false)
   const handleSidebarHide = () => {
     setSidebarOpened(false)
@@ -230,9 +174,11 @@ function MobileContainer(props) {
   const handleToggle = () => {
     setSidebarOpened(true)
   }
-
+  const isNotHome = (router.pathname !== "/");
+  const isCoLivingActive = router.pathname === "/co-living";
+  const isLocationActive = isCoLivingActive || router.pathname === "/kost/[_id]";
+  const isHelpActive = router.pathname === "/help";
   const { children } = props
-  // const {fixed} = state
 
   return (
     <Media as={Sidebar.Pushable} at='mobile'>
@@ -245,19 +191,33 @@ function MobileContainer(props) {
           vertical
           visible={sidebarOpened}
         >
-          {/* <Menu.Item as='a' active>
-              Home
-            </Menu.Item>
-            <Menu.Item as='a'>Work</Menu.Item>
-            <Menu.Item as='a'>Company</Menu.Item>
-            <Menu.Item as='a'>Careers</Menu.Item> */}
-          <Menu.Item as="h1" style={{ marginLeft: -15 }}>
+
+          <Menu.Item as="a" onClick={() => Router.push('/')} style={{}}>
             <div style={{ display: 'flex' }}>
-              <h1 style={{ padding: '0px 0px', margin: 0, fontWeight: 'bolder' }}>BROSIS</h1>
-              <h1 style={{ padding: '0px 0px', color: 'blue', margin: 0, fontWeight: 'bolder' }}>'</h1>
+              <h1 style={{ padding: '0px 5px', fontWeight: 'bolder' }}>BROSIS</h1>
+              <h1 style={{ padding: '0px 5px', color: 'blue', margin: 0, fontWeight: 'bolder' }}>'</h1>
             </div>
           </Menu.Item>
-          <Menu.Item as='a'>Masuk</Menu.Item>
+          {
+            isCoLivingActive || isLocationActive || isHelpActive ?
+              <>
+                <Menu.Item as='a'><h4>Keseharian</h4></Menu.Item>
+                <Menu.Item
+                  as='a'
+                  active={isLocationActive}
+                  onClick={() => Router.push('/co-living')}
+                >
+                  <h4 style={isLocationActive ? { color: 'blue' } : {}}>Lokasi</h4>
+                </Menu.Item>
+                <Menu.Item
+                  as='a'
+                  active={isHelpActive}
+                  onClick={() => Router.push('/help')}
+                >
+                  <h4 style={isHelpActive ? { color: 'blue' } : {}}>Bantuan</h4>
+                </Menu.Item></> : <></>
+          }
+          <Menu.Item as='a' onClick={() => Router.push('/login')} >Masuk</Menu.Item>
           <Menu.Item as='a'>Daftar</Menu.Item>
         </Sidebar>
 
@@ -279,7 +239,7 @@ function MobileContainer(props) {
                   <Icon name='sidebar' />
                 </Menu.Item>
                 <Menu.Item position='right'>
-                  <Button as='a' inverted={isNotHome ? false : true} onClick={() => Router.push('co-living')}>
+                  <Button as='a' inverted={isNotHome ? false : true} onClick={() => Router.push('/co-living')}>
                     Masuk
                     </Button>
                   <Button as='a' primary inverted={isNotHome ? false : true} style={{ marginLeft: '0.5em' }}>

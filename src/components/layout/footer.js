@@ -11,7 +11,7 @@ import {
 
 export default function Index() {
     return (
-        <Segment inverted vertical style={{ padding: '5em 0em' }}>
+        <Segment inverted vertical style={{ padding: '5em 0em', marginTop: '3em' }}>
             <Container>
                 <Grid divided inverted stackable>
                     <Grid.Row>
