@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container, Grid, Segment, Header, Divider, Button, Accordion } from "semantic-ui-react";
-import Faq from './FAQ';
+import Faq from './Faq';
 import faq from '../../stores/faq';
 import TellUsForm from '../../components/TellUsForm';
 
