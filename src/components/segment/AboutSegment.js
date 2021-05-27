@@ -4,9 +4,8 @@ import React from 'react'
 import {
   Grid,
   Header,
-  Image
 } from 'semantic-ui-react';
-import ImageRounded  from "./single_components/ImageRounded";
+import ImageRounded  from "../single_components/ImageRounded";
 
 export default function AboutSegment(props) {
   return (
@@ -14,10 +13,10 @@ export default function AboutSegment(props) {
       if (index % 2 === 0) {
         return (
           <Grid.Row key={index}>
-            <Grid.Column width={8} style={{ padding: '2em' }}>
+            <Grid.Column width={8} style={{ padding: '2em',textAlign:'left' }}>
               <ImageRounded src={item.image} height={300} />
             </Grid.Column>
-            <Grid.Column width={8} style={{ padding: '2em' }}>
+            <Grid.Column width={8} style={{ padding: '2em',textAlign:'left' }}>
               {item.header !== undefined ?
                 <Header as='h2' style={{ fontSize: '1.8em' }}>
                   {item.header}
@@ -34,7 +33,7 @@ export default function AboutSegment(props) {
       } else {
         return (
           <Grid.Row key={index}>
-            <Grid.Column width={8} style={{ padding: '2em' }}>
+            <Grid.Column width={8} style={{ padding: '2em', textAlign: 'right'  }}>
               {
                 item.header !== undefined ?
                   <Header as='h2' style={{ fontSize: '1.8em', textAlign: 'right' }}>

@@ -1,7 +1,7 @@
 const kost = [
   {
     _id: "1",
-    name: "Juragan Boardinghouse",
+    name: "Juragan Boardinghouse Indonesia",
     photo: "https://static.mamikos.com/uploads/cache/data/style/2019-03-24/jrcA68Yc-540x720.jpg",
     location: "Malang",
     price: "RP. 500.000 / Bulan",

@@ -3,10 +3,10 @@ import { Container, Grid, Segment, Header } from "semantic-ui-react";
 import KostList from './KostList';
 import TellUsForm from '../../components/TellUsForm';
 import Description from './Description';
-import KataBrosisSegment from "../../components/KataBrosisSegment";
-import KeseruanSegment from "../../components/KeseruanSegment";
+import KataBrosisSegment from "../../components/segment/KataBrosisSegment";
+import KeseruanSegment from "../../components/segment/KeseruanSegment";
 
-export default function Index() {
+export default function Index(props) {
 
   return (
     <Container style={{ marginTop: '3em' }}>
@@ -26,11 +26,11 @@ export default function Index() {
       </Segment>
 
       <Segment style={{ padding: '1em 0em' }} vertical>
-     
+
         <KostList />
       </Segment>
 
-      <Segment style={{ padding: '1em 0em', borderRadius: 20 }}>
+      <div style={{ padding: props.mobile ? '2em 0em' : '4em', margin: '1em 0em', backgroundColor: 'white', borderRadius: 20 }}>
         <Grid container stackable verticalAlign='middle'>
           <Grid.Row centered>
             <TellUsForm
@@ -39,23 +39,30 @@ export default function Index() {
             />
           </Grid.Row>
         </Grid>
-      </Segment>
+      </div>
 
-      <Segment style={{ padding: '1em 0em' }} vertical>
+      <div style={{ padding: props.mobile ? '2em 0em' : '4em', backgroundColor: 'white', borderRadius: 20 }}>
         <Grid container stackable verticalAlign='middle'>
           <Grid.Row centered>
             <Description />
           </Grid.Row>
         </Grid>
-      </Segment>
+      </div>
 
-      <Segment style={{ padding: '1em 0em' }} vertical>
+      {/* <Segment style={{ padding: '1em 0em' }} vertical>
         <KataBrosisSegment />
       </Segment>
 
       <Segment style={{ padding: '1em 0em', borderRadius: 20 }} >
         <KeseruanSegment />
-      </Segment>
+      </Segment> */}
+      <div style={{ padding: '4em 0em' }}>
+        <KataBrosisSegment />
+      </div>
+
+      <div style={{ padding: '4em 0em', backgroundColor: 'white', borderRadius: 20 }} >
+        <KeseruanSegment />
+      </div>
 
     </Container>
   )

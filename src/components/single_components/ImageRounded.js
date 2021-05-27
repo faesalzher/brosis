@@ -8,7 +8,7 @@ export default function ImageRounded(props) {
             width: "100%",
             height: props.height ? props.height : 200,
             borderRadius: 20,
-            boxShadow: props.boxShadow ? "1px 1px 1px gray" : '0px'
-        }} bordered rounded size='large' src={props.src} />
+            boxShadow: props.boxShadow ? "0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.15)" : '0px'
+        }} rounded size='large' src={props.src} />
     )
 }

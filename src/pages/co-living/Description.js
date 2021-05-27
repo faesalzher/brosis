@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Card, Grid, Segment } from "semantic-ui-react";
 import about from "../../stores/about";
-import AboutSegment from '../../components/AboutSegment';
+import AboutSegment from '../../components/segment/AboutSegment';
 export default
     function Description() {
     return (

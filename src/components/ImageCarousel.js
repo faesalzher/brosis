@@ -34,7 +34,7 @@ const ImageCarousel = (props) => (
     <Slider>
       {props.data.map((item, index) => {
         return (
-          <Slide index={0} style={{
+          <Slide index={index} key={index} style={{
           }}>
             <Container
               style={{

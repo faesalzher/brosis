@@ -5,8 +5,8 @@ import {
   Grid,
   Header,
 } from 'semantic-ui-react';
-import ImageRounded  from "./single_components/ImageRounded";
-import kost from '../stores/kost';
+import ImageRounded  from "../single_components/ImageRounded";
+import kost from '../../stores/kost';
 export default function AboutSegment(props) {
   return (
     <Grid container stackable verticalAlign='middle'>
