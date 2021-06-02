@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Router from "next/router";
 import NProgress from "nprogress";
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 // import Header from "../components/header";
 import Footer from '../components/layout/footer';
 import {
@@ -21,6 +21,10 @@ import { createMedia } from '@artsy/fresnel';
 import DesktopContainer from '../components/layout/DesktopContainer';
 import MobileContainer from '../components/layout/MobileContainer';
 // import { AuthProvider } from "../context/auth";
+import jwtDecode from "jwt-decode";
+
+
+
 function MyApp(props) {
   const { Component, pageProps } = props;
   const router = useRouter();
@@ -33,31 +37,46 @@ function MyApp(props) {
     },
   });
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState({});
+
+  React.useEffect(() => {    // Update the document title using the browser API    document.title = `You clicked ${count} times`;  
+    if (typeof window !== "undefined") {
+      if (window.localStorage.getItem("jwtToken") !== null) {
+        // console.log("sudah login")
+        setIsLoggedIn(true);
+        setUser(jwtDecode(window.localStorage.getItem("jwtToken")));
+      } else {
+        setIsLoggedIn(false);
+      };
+    }
+  }, [ setIsLoggedIn]);
+
   return (
     <Fragment>
       <Head>
         <title>BROSIS</title>
       </Head>
       {/* <AuthProvider> */}
-        {
-          (router.pathname !== "/login" && router.pathname !== "/register") ?
-            <MediaContextProvider>
-              <Media greaterThan='mobile'>
-                <DesktopContainer mobile={false}>
-                  <Component mobile={false} />
-                  <Footer />
-                </DesktopContainer>
-              </Media>
-              <Media as={Sidebar.Pushable} at='mobile'>
-                <MobileContainer mobile={true}>
-                  <Component mobile={true} />
-                  <Footer />
-                </MobileContainer>
-              </Media>
-            </MediaContextProvider>
-            :
-            <Component {...pageProps} />
-        }
+      {
+        (router.pathname !== "/login" && router.pathname !== "/register") ?
+          <MediaContextProvider>
+            <Media greaterThan='mobile'>
+              <DesktopContainer mobile={false}>
+                <Component mobile={false} isLoggedIn={isLoggedIn} user={user} />
+                <Footer />
+              </DesktopContainer>
+            </Media>
+            <Media as={Sidebar.Pushable} at='mobile'>
+              <MobileContainer mobile={true}>
+                <Component mobile={true} isLoggedIn={isLoggedIn} user={user} />
+                <Footer />
+              </MobileContainer>
+            </Media>
+          </MediaContextProvider>
+          :
+          <Component {...pageProps} />
+      }
       {/* </AuthProvider> */}
     </Fragment>
   );

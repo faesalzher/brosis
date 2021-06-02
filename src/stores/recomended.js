@@ -1,26 +1,17 @@
-const menu = [
+const recomended = [
   {
-    name: "Forums",
+    name: "Cara mengatur keuangan Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ",
     link: "/forums",
-    color: "#79B2DD",
     background: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/",
   },
   {
-    name: "Scheduler",
+    name: "Cara Membersihkan AC Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ",
     link: "/",
-    color: "#7E75B4",
     background: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/",
   },
   {
-    name: "Administrasi",
+    name: "Cara Membersihkan asdasdasd Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ",
     link: "/",
-    color: "#F4ECD7",
-    background: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/",
-  },
-  {
-    name: "Pengaturan",
-    link: "/",
-    color: "#F5BCDC",
     background: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/",
   },
   // {
@@ -37,4 +28,4 @@ const menu = [
   // },
 ]
 
-export default menu;
+export default recomended;

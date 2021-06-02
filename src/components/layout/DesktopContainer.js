@@ -101,7 +101,7 @@ export default function DesktopContainer(props) {
             >
                 <Segment
                     inverted={isNotHome ? false : !fixed}
-                    textAlign='left'
+                    textAlign='center'
                     style={isNotHome ? {} :
                         {
                             minHeight: 700, padding: '1em 0em',
@@ -186,7 +186,7 @@ export default function DesktopContainer(props) {
                         </Container>
                     </Menu>
                     {
-                        isNotHome ? <></> : <HomepageHeading style={{ width: 100 }} mobile={false} />
+                        isNotHome ? <></> : <HomepageHeading mobile={false} />
                     }
                 </Segment>
             </Visibility>

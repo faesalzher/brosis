@@ -3,8 +3,8 @@
 import React from 'react'
 import {
     Grid,
+    Header
 } from 'semantic-ui-react';
-import MainMenu from './MainMenu';
 export default function HomepageHeading(props) {
     // <Container style={{ width: 1150 }}>
     //   <Header
@@ -25,25 +25,18 @@ export default function HomepageHeading(props) {
     // </Container>
     return (
         // <Container style={{ marginTop: 50 }}>
-        <Grid container columns={2} doubling verticalAlign="middle" style={{ padding: props.mobile ? '0em' : '6em 0em' }} >
-            <Grid.Column width={8}>
-                <h1
-                    style={{
-                        fontWeight: "bolder",
-                        color: "white",
-                        fontSize: 65,
-                        fontSize: props.mobile ? '2em' : '5em',
-                        //       fontWeight: 'bolder',
-                        //       marginBottom: 0,
-                        marginTop: props.mobile ? '1.5em' : '0em',
-                    }}
-                >
-                    There is nothing like Brosis life.
-          </h1>
-            </Grid.Column>
-            <Grid.Column width={8}>
-                <MainMenu {...props} />
-            </Grid.Column>
+        <Grid container verticalAlign="middle" style={{justifyContent:'center'}}>
+            <Header
+                as='h1'
+                content='There is nothing like Brosis life.'
+                inverted
+                style={{
+                    fontSize: props.mobile ? '2em' : '4em',
+                    fontWeight: 'bolder',
+                    // marginBottom: 0,
+                    marginTop: props.mobile ? '1.5em' : '4em',
+                }}
+            />
         </Grid>
         // </Container >
     );
