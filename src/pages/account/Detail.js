@@ -5,9 +5,11 @@ export default function Detail(props) {
   const formDefault = {
     nama_lengkap: "Nama Lengkap Anda",
     momor_ponsel: "089273723",
-    email: "as",
+    email: props.user.email,
     universitas: "",
   };
+
+  
 
   const [form, setForm] = useState(formDefault);
   const handleChange = (e) => {

@@ -50,7 +50,7 @@ function MyApp(props) {
         setIsLoggedIn(false);
       };
     }
-  }, [ setIsLoggedIn]);
+  }, []);
 
   return (
     <Fragment>
