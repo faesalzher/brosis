@@ -27,7 +27,7 @@ export default function Index() {
             <Table.Row padded style={{ backgroundColor: 'aquamarine' }}>
               <Table.HeaderCell style={{ backgroundColor: 'aquamarine' }} colSpan='3'>List of Topic</Table.HeaderCell>
               <Table.HeaderCell style={{ backgroundColor: 'aquamarine' }} textAlign='right' >
-                <Button compact color="blue">Add Topic</Button>
+                <Button compact color="blue" onClick={()=>Router.push('/forums/add')}>Add Topic</Button>
               </Table.HeaderCell>
             </Table.Row>
           </Table.Header>
@@ -55,11 +55,12 @@ export default function Index() {
                           // position: "absolute",
                         }}
                       />
-                      </Table.Cell>
+                    </Table.Cell>
                     <Table.Cell style={{ color: 'blue' }} >
                       <Link href="/forums/[_id]" as={`/forums/${item._id}`}>
                         {item.name}
                       </Link>
+                      <p style={{ fontSize:10, color:'grey' }}>Created By : Ahmad Sembiring</p>
                     </Table.Cell>
                     <Table.Cell >
                       <Icon name="reply" />

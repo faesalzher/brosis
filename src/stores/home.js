@@ -7,19 +7,19 @@ const menu = [
   },
   {
     name: "Scheduler",
-    link: "/",
+    link: "/scheduler",
     color: "#7E75B4",
     background: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/",
   },
   {
     name: "Administrasi",
-    link: "/",
+    link: "/administration",
     color: "#F4ECD7",
     background: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/",
   },
   {
     name: "Pengaturan",
-    link: "/",
+    link: "/account",
     color: "#F5BCDC",
     background: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/",
   },

@@ -20,12 +20,12 @@ export default function Index() {
                 </Card>
               </Grid.Column>
               <Grid.Column width={12} verticalAlign="middle">
-                < Header  as='h1' style={{ fontWeight: 'bolder', fontSize: '2em',marginBottom:0}}>
+                < Header as='h1' style={{ fontWeight: 'bolder', fontSize: '2em', marginBottom: 0 }}>
                   Pengumuman Penting
                         </Header>
                 <div style={{ display: 'flex' }}>
                   <Icon name="calendar outlie" />
-              Date Created: Sat Jun 05 2021 22:58
+              Date Posted: Sat Jun 05 2021 22:58
                         </div>
               </Grid.Column>
             </Grid>
@@ -79,12 +79,12 @@ Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying ou
                 />
               </Grid.Column>
               <Grid.Column width={13} verticalAlign="middle">
-                < Header as='h6' style={{ fontWeight: 'bolder', fontSize: '1em',marginBottom:0 }}>
+                < Header as='h6' style={{ fontWeight: 'bolder', fontSize: '1em', marginBottom: 0 }}>
                   Ahmad Sembiring
                         </Header>
                 <div style={{ display: 'flex' }}>
                   <Icon name="calendar outlie" />
-              Date Created:Sat Jun 05 2021 22:58
+              Date Posted:Sat Jun 05 2021 22:58
                 </div>
               </Grid.Column>
             </Grid>
@@ -119,12 +119,12 @@ Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying ou
                 />
               </Grid.Column>
               <Grid.Column width={13} verticalAlign="middle">
-                < Header as='h6' style={{ fontWeight: 'bolder', fontSize: '1em',marginBottom:0 }}>
+                < Header as='h6' style={{ fontWeight: 'bolder', fontSize: '1em', marginBottom: 0 }}>
                   Ahmad Sembiring
                         </Header>
                 <div style={{ display: 'flex' }}>
                   <Icon name="calendar outlie" />
-              Date Created: Sat Jun 05 2021 22:58
+              Date Posted: Sat Jun 05 2021 22:58
                 </div>
               </Grid.Column>
             </Grid>
@@ -132,7 +132,16 @@ Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying ou
           </div>
         </Grid>
         <Divider />
+        <p style={{ fontSize: '1em' }}>Quote:</p>
+        <Segment secondary style={{ color: 'black' }}>
+          <div style={{ display: 'flex' }}>
+            Original Posted By Ahmad Sembiring
+            <Icon name='caret right' link color="blue"/>
+          </div>
+          Pellentesque habitant morbi tristique senectus.
+          </Segment>
         <Grid container stackable verticalAlign='middle' style={{ padding: '1em 0em' }}>
+
           Lipsum generator: Lorem Ipsum - All the facts
           https://www.lipsum.com
 </Grid>
