@@ -1,6 +1,6 @@
 // import React, { Fragment } from "react";
 import { Image } from "semantic-ui-react";
-import kost from "../stores/kost";
+import kampus from "../stores/kampus";
 import Router, { withRouter } from "next/router";
 import { createMedia } from '@artsy/fresnel'
 import PropTypes from 'prop-types'
@@ -43,12 +43,12 @@ import "pure-react-carousel/dist/react-carousel.es.css";
  * It can be more complicated, but you can create really flexible markup.
  */
 const gambar_jam = [
-  { jam: "7 am", image: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/" },
-  { jam: "9 am", image: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/" },
-  { jam: "3 am", image: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/" },
-  { jam: "4 pm", image: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/" },
-  { jam: "7 pm", image: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/" },
-  { jam: "9 pm", image: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/" },
+  { name: "7 am", image: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/" },
+  { name: "9 am", image: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/" },
+  { name: "3 am", image: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/" },
+  { name: "4 pm", image: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/" },
+  { name: "7 pm", image: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/" },
+  { name: "9 pm", image: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/" },
 ];
 
 
@@ -133,12 +133,12 @@ const Index = (props) => {
               Brosis Bukan Kosan Biasa!
         </Header>
           </Grid.Row>
-          <PreviewSegment data={kost} title="Lihat Semua" href={'#link kost'} />
+          <PreviewSegment data={kampus} title="Lihat Semua" href={'#link kampus'} />
         </Grid>
       </div>
 
       <div style={{ margin: props.mobile ? '2em 0em' : '4em', padding: '2em', backgroundColor: 'white', borderRadius: 20 }}>
-        <ImageCarousel data={gambar_jam} {...props} />
+        <ImageCarousel data={gambar_jam} {...props} icon="clock"/>
       </div>
 
       <div style={{ padding: '4em 0em', backgroundColor: 'white', borderRadius: 20 }}>
@@ -148,7 +148,7 @@ const Index = (props) => {
               Kami ada dimana kamu ada!
         </Header>
           </Grid.Row>
-          <PreviewSegment data={kost} title="Lihat Semua Lokasi" href={'#link lokasi'} />
+          <PreviewSegment data={kampus} title="Lihat Semua Lokasi" href={'#link lokasi'} />
         </Grid>
       </div>
 

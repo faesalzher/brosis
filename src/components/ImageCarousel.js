@@ -14,7 +14,7 @@ const CustomDotGroup = (props) => (
     {/* <Button.Group size={size}> */}
     {props.data.map((item, index) => {
       return (
-        <Button as={Dot} style={{ borderRadius: 10 }} key={index} icon="clock" secondary content={item.jam} slide={index}></Button>
+        <Button as={Dot} style={{ borderRadius: 10 }} key={index} icon={props.icon} secondary content={item.name} slide={index}></Button>
       );
     })
     }
@@ -31,6 +31,7 @@ const ImageCarousel = (props) => (
     naturalSlideHeight={50}
     totalSlides={props.data.length}
   >
+    {console.log(props.data)}
     <Slider>
       {props.data.map((item, index) => {
         return (
@@ -51,7 +52,7 @@ const ImageCarousel = (props) => (
       })}
     </Slider>
     <Divider />
-    <CustomDotGroup slides={props.data.length} data={props.data} />
+    <CustomDotGroup slides={props.data.length} data={props.data} {...props}/>
   </CarouselProvider>
 );
 

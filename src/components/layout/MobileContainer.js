@@ -11,8 +11,10 @@ import {
 } from 'semantic-ui-react';
 import Router from "next/router";
 import { useRouter } from 'next/router';
+import jwtDecode from "jwt-decode";
 import HomepageHeading from '../HomepageHeading';
-
+import HeaderContent from './HeaderContent';
+import AccountInfo from './AccountInfo';
 export default function MobileContainer(props) {
   const router = useRouter();
   const [sidebarOpened, setSidebarOpened] = useState(false)
@@ -22,11 +24,58 @@ export default function MobileContainer(props) {
   const handleToggle = () => {
     setSidebarOpened(true)
   }
-  const isNotHome = (router.pathname !== "/");
-  const isCoLivingActive = router.pathname === "/co-living";
-  const isLocationActive = isCoLivingActive || router.pathname === "/kost/[_id]";
-  const isHelpActive = router.pathname === "/help";
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState({});
+
+  React.useEffect(() => {    // Update the document title using the browser API    document.title = `You clicked ${count} times`;  
+    if (typeof window !== "undefined") {
+      if (window.localStorage.getItem("jwtToken") !== null) {
+        // console.log("sudah login")
+        setIsLoggedIn(true);
+        setUser(jwtDecode(window.localStorage.getItem("jwtToken")));
+      } else {
+        setIsLoggedIn(false);
+      };
+    }
+  }, []);
+
   const { children } = props
+  // const { fixed } = state
+  const isNotHome = (router.pathname !== "/");
+  // const isCoLivingActive = router.pathname === "/co-living";
+  // const isLocationActive = isCoLivingActive || router.pathname === "/kost/[_id]";
+  // const isHelpActive = router.pathname === "/help";
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    window.localStorage.removeItem("jwtToken");
+    Router.push('/')
+    // setUser(jwtDecode(window.localStorage.getItem("jwtToken")));
+  }
+  const menu = [
+    {
+      name: "Co-Living",
+      link: "/co-living",
+      active: router.pathname === "/co-living" || router.pathname === "/co-living/[_id]",
+    },
+    {
+      name: "Tentang",
+      link: "/about",
+      active: false,
+    },
+    {
+      name: "Forums",
+      link: "/forums",
+      active: false,
+
+    },
+    {
+      name: "Bantuan",
+      link: "/help",
+      active: router.pathname === "/help",
+    },
+  ]
 
   return (
     <Sidebar.Pushable>
@@ -45,27 +94,7 @@ export default function MobileContainer(props) {
             <h1 style={{ padding: '0px 5px', color: 'blue', margin: 0, fontWeight: 'bolder' }}>'</h1>
           </div>
         </Menu.Item>
-        {
-          isCoLivingActive || isLocationActive || isHelpActive ?
-            <>
-              <Menu.Item as='a'><h4>Keseharian</h4></Menu.Item>
-              <Menu.Item
-                as='a'
-                active={isLocationActive}
-                onClick={() => Router.push('/co-living')}
-              >
-                <h4 style={isLocationActive ? { color: 'blue' } : {}}>Lokasi</h4>
-              </Menu.Item>
-              <Menu.Item
-                as='a'
-                active={isHelpActive}
-                onClick={() => Router.push('/help')}
-              >
-                <h4 style={isHelpActive ? { color: 'blue' } : {}}>Bantuan</h4>
-              </Menu.Item></> : <></>
-        }
-        <Menu.Item as='a' onClick={() => Router.push('/login')} >Masuk</Menu.Item>
-        <Menu.Item as='a'>Daftar</Menu.Item>
+        <HeaderContent />
       </Sidebar>
 
       <Sidebar.Pusher dimmed={sidebarOpened}>
@@ -87,14 +116,15 @@ export default function MobileContainer(props) {
               <Menu.Item onClick={handleToggle}>
                 <Icon name='sidebar' />
               </Menu.Item>
-              <Menu.Item position='right'>
+              <AccountInfo />
+              {/* <Menu.Item position='right'>
                 <Button as='a' inverted={isNotHome ? false : true} onClick={() => Router.push('/co-living')}>
                   Masuk
                       </Button>
                 <Button as='a' primary inverted={isNotHome ? false : true} style={{ marginLeft: '0.5em' }}>
                   Daftar
                       </Button>
-              </Menu.Item>
+              </Menu.Item> */}
             </Menu>
             {
               isNotHome ? <></> : <HomepageHeading mobile />

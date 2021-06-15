@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import { Container, Grid, Segment, Header, Icon, Button, Accordion, Table, Menu } from "semantic-ui-react";
+import { Container, Grid, Segment, Header, Icon, Button, Pagination, Table, Menu } from "semantic-ui-react";
 import Link from "next/link";
 import Router from "next/router";
 
 // import Faq from './Faq';
 import topic from '../../stores/topic';
-import TellUsForm from '../../components/TellUsForm';
 
 export default function Index() {
-  const [allExpanded, setAllExpanded] = useState(false);
+  const [activePage, setActivePage] = React.useState(1);
+  const handlePaginationChange = (e, { activePage }) => {
+    setActivePage(activePage)
+  }
 
   return (
     <Container style={{ marginTop: '3em' }}>
@@ -27,7 +29,7 @@ export default function Index() {
             <Table.Row padded style={{ backgroundColor: 'aquamarine' }}>
               <Table.HeaderCell style={{ backgroundColor: 'aquamarine' }} colSpan='3'>List of Topic</Table.HeaderCell>
               <Table.HeaderCell style={{ backgroundColor: 'aquamarine' }} textAlign='right' >
-                <Button compact color="blue" onClick={()=>Router.push('/forums/add')}>Add Topic</Button>
+                <Button compact color="blue" onClick={() => Router.push('/forums/add')}>Add Topic</Button>
               </Table.HeaderCell>
             </Table.Row>
           </Table.Header>
@@ -60,7 +62,7 @@ export default function Index() {
                       <Link href="/forums/[_id]" as={`/forums/${item._id}`}>
                         {item.name}
                       </Link>
-                      <p style={{ fontSize:10, color:'grey' }}>Created By : Ahmad Sembiring</p>
+                      <p style={{ fontSize: 10, color: 'grey' }}>Created By : Ahmad Sembiring</p>
                     </Table.Cell>
                     <Table.Cell >
                       <Icon name="reply" />
@@ -73,20 +75,17 @@ export default function Index() {
             }
           </Table.Body>
           <Table.Footer>
-            <Table.Row>
-              <Table.HeaderCell colSpan='3'>
-                <Menu floated='right' pagination>
-                  <Menu.Item as='a' icon>
-                    <Icon name='chevron left' />
-                  </Menu.Item>
-                  <Menu.Item as='a'>1</Menu.Item>
-                  <Menu.Item as='a'>2</Menu.Item>
-                  <Menu.Item as='a'>3</Menu.Item>
-                  <Menu.Item as='a'>4</Menu.Item>
-                  <Menu.Item as='a' icon>
-                    <Icon name='chevron right' />
-                  </Menu.Item>
-                </Menu>
+            <Table.Row style={{textAlign:'right'}}>
+              <Table.HeaderCell colSpan='4'>
+                <Pagination
+                  activePage={activePage}
+                  onPageChange={handlePaginationChange}
+                  totalPages={15}
+                  firstItem={{ content: <Icon name='angle double left' />, icon: true }}
+                  lastItem={{ content: <Icon name='angle double right' />, icon: true }}
+                  prevItem={{ content: <Icon name='angle left' />, icon: true }}
+                  nextItem={{ content: <Icon name='angle right' />, icon: true }}
+                />
               </Table.HeaderCell>
             </Table.Row>
           </Table.Footer>

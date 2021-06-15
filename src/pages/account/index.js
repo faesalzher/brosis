@@ -16,7 +16,6 @@ export default function Index() {
       };
     }
   }, []);
-
   return (
     <Container style={{ marginTop: '3em' }}>
       {/* <Segment style={{ padding: '4em 0em' }} vertical>
@@ -35,8 +34,6 @@ export default function Index() {
               Your Account Information
             </Header>
           </Grid.Row>
-        </Grid>
-        <Grid container stackable verticalAlign='middle'>
           <Detail user={user} />
         </Grid>
       </Segment>

@@ -6,7 +6,7 @@ import {
   Header,
 } from 'semantic-ui-react';
 import ImageRounded  from "../single_components/ImageRounded";
-import kost from '../../stores/kost';
+import kampus from '../../stores/kampus';
 export default function AboutSegment(props) {
   return (
     <Grid container stackable verticalAlign='middle'>
@@ -19,7 +19,7 @@ export default function AboutSegment(props) {
     </Grid.Row>
     <Grid.Row centered>
       <Grid container columns={3} doubling stackable>
-        {kost.slice(3).map((item, index) => {
+        {kampus.slice(0,3).map((item, index) => {
           return (
             <Grid.Column key={index}>
               <ImageRounded

@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { Container, Grid, Segment, Header } from "semantic-ui-react";
-import KostList from './KostList';
+import KampusList from './KampusList';
 import TellUsForm from '../../components/TellUsForm';
 import Description from './Description';
 import KataBrosisSegment from "../../components/segment/KataBrosisSegment";
@@ -27,7 +27,7 @@ export default function Index(props) {
 
       <Segment style={{ padding: '1em 0em' }} vertical>
 
-        <KostList />
+        <KampusList />
       </Segment>
 
       <div style={{ padding: props.mobile ? '2em 0em' : '4em', margin: '1em 0em', backgroundColor: 'white', borderRadius: 20 }}>
