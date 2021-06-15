@@ -4,14 +4,13 @@ import kampus from "../../stores/kampus";
 import Link from "next/link";
 
 export default function UnitCard(props) {
-
-
+    const { data } = props;
     return (
         <Grid container stackable verticalAlign='middle' style={{}}>
             <Grid.Row centered>
                 <Grid.Column>
                     <Card.Group itemsPerRow={2} stackable doubling>
-                        {props.data.map((item, index) => {
+                        {data.map((item, index) => {
                             return (
                                 // <Link key={index} href="/co-living/[_id]" as={`/co-living/${item._id}`}>
                                 <Card
