@@ -15,6 +15,7 @@ export default function UnitCard(props) {
                             return (
                                 // <Link key={index} href="/co-living/[_id]" as={`/co-living/${item._id}`}>
                                 <Card
+                                    key={index}
                                     style={{
                                         borderRadius: 20,
                                     }}>
@@ -39,7 +40,7 @@ export default function UnitCard(props) {
                                             {item.name}
                                         </Header>
                                         <Header as='h5' style={{ color: 'grey', margin: "2px 0px" }}>
-                                            Mulai  <Label tag style={{marginLeft:'1em'}}>{item.price}</Label> / Bulan
+                                            Mulai  <Label tag style={{ marginLeft: '1em' }}>{item.price}</Label> / Bulan
                                         </Header>
 
                                         <Button content='Lihat Unit' fluid primary style={{ borderRadius: 20, margin: "1em 0px" }} />

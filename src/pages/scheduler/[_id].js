@@ -15,7 +15,6 @@ const handleChange = (e) => {
     const { id, value } = e.target;
     setForm({ ...form, [id]: value })
 }
-console.log(form);
   return (
     <Container style={{ marginTop: '3em' }}>
       <Segment style={

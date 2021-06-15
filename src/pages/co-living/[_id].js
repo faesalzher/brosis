@@ -39,7 +39,7 @@ export default function Index(props) {
           <Grid.Row centered style={{ padding: '2em' }}>
             <Header as='h2' style={{ fontSize: '2em', }}>
               Tentang Brosis House Universitas Brawijaya
-        </Header>
+            </Header>
           </Grid.Row>
           <p style={{ fontSize: '1.33em', textAlign: 'center' }}>
             {faker.lorem.paragraphs()}
@@ -47,7 +47,7 @@ export default function Index(props) {
           <Grid.Row centered style={{ padding: '2em' }}>
             <Header as='h2' style={{ fontSize: '2em', }}>
               Pilihan Unit Brosis Universitas Brawijaya
-        </Header>
+            </Header>
           </Grid.Row>
         </Grid>
         <UnitCard data={kost} />
@@ -55,7 +55,7 @@ export default function Index(props) {
           <Grid.Row centered style={{ padding: '2em' }}>
             <Header as='h2' style={{ fontSize: '2em', }}>
               Amenitas Brosis House Universitas Brawijaya
-        </Header>
+            </Header>
           </Grid.Row>
           <PreviewSegment data={kampus} title="Lihat Semua Amenitas" href={'#link kampus'} />
         </Grid>
@@ -66,7 +66,7 @@ export default function Index(props) {
             <Grid.Column width={8} style={{ padding: '2em', textAlign: 'left' }}>
               <Header as='h2' style={{ color: 'darkblue', fontSize: '2em' }}>
                 Kegiatan Komunitas di Brosis Universitas Brawijaya
-            </Header>
+              </Header>
               <p style={{ fontSize: '1.33em' }}>
                 {faker.lorem.sentences()}
               </p>
@@ -92,7 +92,7 @@ export default function Index(props) {
         <KataBrosisSegment />
       </div>
 
-      <div style={{  padding: props.mobile ? 0 : '4em 0em', backgroundColor: 'white', borderRadius: 20 }} >
+      <div style={{ padding: props.mobile ? 0 : '4em 0em', backgroundColor: 'white', borderRadius: 20 }} >
         <KeseruanSegment />
       </div>
     </Container>

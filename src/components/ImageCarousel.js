@@ -25,35 +25,37 @@ const CustomDotGroup = (props) => (
   </Container>
 );
 
-const ImageCarousel = (props) => (
-  <CarouselProvider
-    naturalSlideWidth={100}
-    naturalSlideHeight={50}
-    totalSlides={props.data.length}
-  >
-    {console.log(props.data)}
-    <Slider>
-      {props.data.map((item, index) => {
-        return (
-          <Slide index={index} key={index} style={{
-          }}>
-            <Container
-              style={{
-                borderRadius: 20,
-                height: 'inherit',
-                // padding: "0em",
-                backgroundImage: `url(${item.image})`,
-                backgroundSize: "cover"
-              }}
-            />
-            {/* <Image src="https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/" /> */}
-          </Slide>
-        );
-      })}
-    </Slider>
-    <Divider />
-    <CustomDotGroup slides={props.data.length} data={props.data} {...props}/>
-  </CarouselProvider>
-);
+function ImageCarousel(props) {
+  const { data } = props;
+  return (
+    <CarouselProvider
+      naturalSlideWidth={100}
+      naturalSlideHeight={50}
+      totalSlides={data.length}
+    >
+      <Slider>
+        {data.map((item, index) => {
+          return (
+            <Slide index={index} key={index} style={{
+            }}>
+              <Container
+                style={{
+                  borderRadius: 20,
+                  height: 'inherit',
+                  // padding: "0em",
+                  backgroundImage: `url(${item.image})`,
+                  backgroundSize: "cover"
+                }}
+              />
+              {/* <Image src="https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/" /> */}
+            </Slide>
+          );
+        })}
+      </Slider>
+      <Divider />
+      <CustomDotGroup slides={props.data.length} data={props.data} {...props} />
+    </CarouselProvider>
+  );
+}
 
 export default ImageCarousel;
