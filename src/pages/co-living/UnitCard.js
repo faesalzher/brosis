@@ -1,7 +1,6 @@
 import React from "react";
-import { Card, Grid, Dropdown, Header, Pagination, Icon, Button, Label } from "semantic-ui-react";
-import kampus from "../../stores/kampus";
-import Link from "next/link";
+import { Card, Grid, Header, Button, Label } from "semantic-ui-react";
+
 
 export default function UnitCard(props) {
     const { data } = props;
