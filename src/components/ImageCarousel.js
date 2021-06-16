@@ -1,20 +1,21 @@
+
+import React from "react";
+import { Divider, Button, Container } from "semantic-ui-react";
+// import CustomDotGroup from "../components/CustomDotGroup";
 import {
   CarouselProvider,
   Slide,
   Slider,
   Dot
 } from "pure-react-carousel";
-import React from "react";
-import { Divider, Button, Container } from "semantic-ui-react";
-
-// import CustomDotGroup from "../components/CustomDotGroup";
+import "pure-react-carousel/dist/react-carousel.es.css";
 
 const CustomDotGroup = (props) => (
   <Container textAlign="center">
     {/* <Button.Group size={size}> */}
     {props.data.map((item, index) => {
       return (
-        <Button as={Dot} style={{ borderRadius: 10 }} key={index} icon={props.icon} secondary content={item.name} slide={index}></Button>
+        <Button as={Dot} style={{ borderRadius: 10, margin: '5px 3px' }} key={index} icon={props.icon} secondary content={item.name} slide={index}></Button>
       );
     })
     }
