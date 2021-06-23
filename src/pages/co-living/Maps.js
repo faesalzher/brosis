@@ -5,42 +5,23 @@ import styles from './Maps.module.css';
 // We will use these things from the lib
 // https://react-google-maps-api-docs.netlify.com/
 import GoogleMapReact from 'google-map-react';
-import UnitCardMini from "./UnitCardMini";
+import UnitCardMini from "../../components/UnitCardMini";
 
 
-const CustomDotGroup = (props) => (
-    <Container textAlign="center">
-        {/* <Button.Group size={size}> */}
-        {props.data.map((item, index) => {
-            return (
-                <Button key={index} style={{ borderRadius: 10, margin: '5px 3px' }} secondary content={item.name}></Button>
-            );
-        })
-        }
-    </Container>
-);
-const markerStyle = {
-    // position: "absolute",
-    // top: "100%",
-    // left: "50%",
-    // transform: "translate(-50%, -100%)"
-};
+// const CustomDotGroup = (props) => (
+//     <Container textAlign="center">
+//         {/* <Button.Group size={size}> */}
+//         {props.data.map((item, index) => {
+//             return (
+//                 <Button key={index} style={{ borderRadius: 10, margin: '5px 3px' }} secondary content={item.name}></Button>
+//             );
+//         })
+//         }
+//     </Container>
+// );
+
 export default function Maps() {
-    const timeoutLength = 2500;
-    const [isOpen, setOpen] = useState(false)
-    const handleOpen = () => {
-        setOpen(true)
-
-        // const timeout = setTimeout(() => {
-        //     setOpen(false);
-        // }, timeoutLength)
-    }
-
-    const handleClose = () => {
-        setOpen(false)
-        // clearTimeout(timeout)
-    }
-    // const [hover, setHover] = useState(false)
+  
 
     return (
         // Important! Always set the container height explicitly

@@ -12,7 +12,7 @@ import KataBrosisSegment from '../../components/segment/KataBrosisSegment';
 import KeseruanSegment from '../../components/segment/KeseruanSegment';
 import Router from "next/router";
 import Maps from './Maps';
-import UnitCard from "./UnitCard";
+import UnitCard from "../../components/UnitCard";
 
 export default function Index(props) {
   return (
