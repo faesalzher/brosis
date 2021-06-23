@@ -43,7 +43,7 @@ export default function Index(props) {
         <Grid container stackable verticalAlign='middle'>
           <Grid.Row centered style={{ padding: '2em' }}>
             <Header as='h2' style={{ fontSize: '2em', }}>
-              Profil Bro' House Universitas Brawijaya
+              Profil Bro' House Tidar
             </Header>
           </Grid.Row>
           <p style={{ fontSize: '1.33em', textAlign: 'center' }}>
@@ -122,11 +122,11 @@ export default function Index(props) {
               Demi Kenyamanan Bersama...
             </Header>
           </Grid.Row>
-          <PreviewSegment data={kampus} title="Lihat Semua Tata Tertib" href={'#link kampus'} />
+          <PreviewSegment data={kampus} title="Lihat Semua Tata Tertib" href={'/tata-tertib/' + props.router.query._id} />
         </Grid>
-          <Grid container stackable verticalAlign='middle'>
-            <ReservationForm ref={myRef} />
-          </Grid>
+        <Grid container stackable verticalAlign='middle'>
+          <ReservationForm ref={myRef} />
+        </Grid>
       </div>
       <div style={{ padding: props.mobile ? 0 : '4em 0em' }}>
         <KataBrosisSegment />

@@ -32,7 +32,7 @@ import Schedules from '../components/Schedules';
 import Recomend from "../components/segment/Recomend";
 import jwtDecode from "jwt-decode";
 
-import "pure-react-carousel/dist/react-carousel.es.css";
+
 
 // import image_default from '../../public/image_default.png'
 // import image_not_found from '../../public/image_not_found.png'
@@ -43,12 +43,12 @@ import "pure-react-carousel/dist/react-carousel.es.css";
  * It can be more complicated, but you can create really flexible markup.
  */
 const gambar_jam = [
-  { name: "7 am", image: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/" },
-  { name: "9 am", image: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/" },
-  { name: "3 am", image: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/" },
-  { name: "4 pm", image: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/" },
-  { name: "7 pm", image: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/" },
-  { name: "9 pm", image: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/" },
+  { name: "7 am", image: "https://cdn-0.idownloadblog.com/wp-content/uploads/2018/06/macOS-Mojave-Day-wallpaper.jpg" },
+  { name: "9 am", image: "https://cdn-0.idownloadblog.com/wp-content/uploads/2018/06/macOS-Mojave-Day-wallpaper.jpg" },
+  { name: "3 am", image: "https://cdn-0.idownloadblog.com/wp-content/uploads/2018/06/macOS-Mojave-Day-wallpaper.jpg" },
+  { name: "4 pm", image: "https://cdn-0.idownloadblog.com/wp-content/uploads/2018/06/macOS-Mojave-Day-wallpaper.jpg" },
+  { name: "7 pm", image: "https://cdn-0.idownloadblog.com/wp-content/uploads/2018/06/macOS-Mojave-Day-wallpaper.jpg" },
+  { name: "9 pm", image: "https://cdn-0.idownloadblog.com/wp-content/uploads/2018/06/macOS-Mojave-Day-wallpaper.jpg" },
 ];
 
 

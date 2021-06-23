@@ -63,13 +63,13 @@ function MyApp(props) {
           <MediaContextProvider>
             <Media greaterThan='mobile'>
               <DesktopContainer mobile={false}>
-                <Component mobile={false} isLoggedIn={isLoggedIn} user={user} />
+                <Component mobile={false} isLoggedIn={isLoggedIn} user={user} router={router}/>
                 <Footer />
               </DesktopContainer>
             </Media>
             <Media as={Sidebar.Pushable} at='mobile'>
               <MobileContainer mobile={true}>
-                <Component mobile={true} isLoggedIn={isLoggedIn} user={user} />
+                <Component mobile={true} isLoggedIn={isLoggedIn} user={user} router={router}/>
                 <Footer />
               </MobileContainer>
             </Media>

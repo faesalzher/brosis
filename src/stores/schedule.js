@@ -31,13 +31,13 @@ const schedule = [
     //   name: "Events",
     //   description: "/",
     //   color: "#A664A2",
-    //   background: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/",
+    //   background: "https://cdn-0.idownloadblog.com/wp-content/uploads/2018/06/macOS-Mojave-Day-wallpaper.jpg",
     // },
     // {
     //   name: "Account",
     //   description: "/",
     //   color: "#EF6ABB",
-    //   background: "https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/",
+    //   background: "https://cdn-0.idownloadblog.com/wp-content/uploads/2018/06/macOS-Mojave-Day-wallpaper.jpg",
     // },
   ]
   

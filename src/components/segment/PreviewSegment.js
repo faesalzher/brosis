@@ -21,6 +21,7 @@ export default function PreviewSegment(props) {
         <Grid.Column>
           <Card
             href={props.href}
+            as={props.as !== undefined ? props.as : ""}
             style={{ height: 200, borderRadius: 20, boxShadow: "0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.15)" }}
           >
             <Card.Content

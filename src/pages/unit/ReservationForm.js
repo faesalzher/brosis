@@ -24,7 +24,7 @@ export default function ReservationForm(props) {
                         Reservasi Tempat!
                     </Header>
                     <Header as='h3' style={{ fontWeight: 'bolder' }}>
-                        Bro' House Universitas Brawijaya
+                        Bro' House Tidar
                     </Header>
                     <p style={{ color: 'grey' }}>
                         32 Park Meadow Point RT 35 / RW 21

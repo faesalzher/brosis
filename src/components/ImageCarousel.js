@@ -48,7 +48,7 @@ function ImageCarousel(props) {
                   backgroundSize: "cover"
                 }}
               />
-              {/* <Image src="https://cdn.statically.io/img/9to5mac.com/2018/06/05/macos-mojave-wallpapers-download/mojave-day/" /> */}
+              {/* <Image src="https://cdn-0.idownloadblog.com/wp-content/uploads/2018/06/macOS-Mojave-Day-wallpaper.jpg" /> */}
             </Slide>
           );
         })}

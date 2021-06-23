@@ -5,7 +5,9 @@ const kost = [
     image: "https://static.mamikos.com/uploads/cache/data/style/2019-03-24/jrcA68Yc-540x720.jpg",
     type: "Co-Living Mahasiswa",
     price: "RP. 500.000",
-    address: "9 Fair Oaks Point RT 01 / RW 12",
+    latitude: -7.962302451784501,
+    longitude: 112.60592564771713,
+    address: "Jl. Raya Candi 3 No.466",
   },
   {
     _id: "2",
@@ -13,7 +15,9 @@ const kost = [
     image: "https://static.mamikos.com/uploads/cache/data/style/2021-03-21/sntqg291-540x720.jpg",
     type: "Co-Living Mahasiswa",
     price: "RP. 550.000",
-    address: "32 Park Meadow Point RT 35 / RW 21",
+    latitude: -7.9624969534696435,
+    longitude: 112.6066330153932,
+    address: "Jl. Raya Candi 3 No.450, Karangbesuki, Kec. Sukun, Kota Malang, Jawa Timur 65146",
   },
   {
     _id: "3",
@@ -21,7 +25,9 @@ const kost = [
     image: "https://static.mamikos.com/uploads/cache/data/style/2020-02-07/Qr9IrzZ4-540x720.jpg",
     type: "Co-Living Mahasiswi",
     price: "RP. 600.000",
-    address: "8 Ridgeview Place RT 24 / RW 98",
+    latitude: -7.960943704814948,
+    longitude: 112.60598319385828,
+    address: "D-172c, Jl. TRS. Sigura-Gura, Karangbesuki, Kec. Sukun, Kota Malang, Jawa Timur 65149",
   },
   {
     _id: "4",
@@ -29,7 +35,9 @@ const kost = [
     image: "https://static.mamikos.com/uploads/cache/data/style/2019-11-27/6CqlIdr0-540x720.jpg",
     type: "Co-Living Mahasiswa",
     price: "RP. 650.000",
-    address: "75 Schlimgen Parkway RT 34 / RW 91",
+    latitude: -7.960518993484433,
+    longitude: 112.60794636415542,
+    address: "Malang, Karangbesuki, Kec. Sukun, Kota Malang, Jawa Timur 65149",
   },
   {
     _id: "5",
@@ -37,7 +45,9 @@ const kost = [
     image: "https://static.mamikos.com/uploads/cache/data/style/2021-04-23/hCzorJ8S-540x720.jpg",
     type: "Co-Living Mahasiswa",
     price: "RP. 700.000",
-    address: "81 Green Drive RT 12 / RW 91",
+    latitude: - 7.957752619672639,
+    longitude: 112.60323381255161,
+    address: "Malang, Karangbesuki, Kec. Sukun, Kota Malang, Jawa Timur 65149",
   },
 ]
 export default kost;
